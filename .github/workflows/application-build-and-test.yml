@@ -21,13 +21,8 @@ jobs:
         with:
           go-version: 1.20
 
-      - name: Copy into GOPATH
-        run: |
-          mkdir $HOME/src/go-tree-demo
-          cp -r ../go-tree-demo $HOME/src/go-tree-demo
-
-      - name: LS Check
-        run: ls -a $HOME/src/go-tree-demo
+      - name: Add module
+        run: go mod init github.com/drag0no/go-tree-demo
 
       - name: Build
         run: go build -v ./...
