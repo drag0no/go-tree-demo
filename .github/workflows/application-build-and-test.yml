@@ -35,7 +35,4 @@ jobs:
         run: go vet ./...
 
       - name: Run staticcheck
-        run: |
-          export PATH=${PATH}:`go env GOPATH`/bin
-          go get -u honnef.co/go/tools/cmd/staticcheck
-          staticcheck ./...
+        uses: dominikh/staticcheck-action@v1.3.0
