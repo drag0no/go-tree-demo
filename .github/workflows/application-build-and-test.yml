@@ -20,6 +20,8 @@ jobs:
 
       - name: Build
         run: go build -v ./...
+        env:
+          GOPATH: ${{ runner.workspace }}
 
       - name: GoFmt Check
         run: gofmt -s -w ./
