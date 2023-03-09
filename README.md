@@ -25,7 +25,7 @@
 * **GoFmt Style**
   * We use `gofmt` check in GH Actions to verify that all contributors are following the same format style.
   * For `GoLand` you can set `gofmt` File Watcher to apply specified formatting automatically.
-* **Go Vet, GoLint & Static Check**
+* **Go Vet & Static Check**
   * We use mentioned above tools in GH Actions to verify that all contributors are following best GoLang practices.
 
 ## Known issues
