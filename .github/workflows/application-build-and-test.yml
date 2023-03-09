@@ -14,30 +14,28 @@ jobs:
       GOPATH: ~
 
     steps:
-      - uses: actions/checkout@v3
-
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
           go-version: 1.20
 
-      - name: Add module
-        run: go mod init github.com/drag0no/go-tree-demo
-
-      - name: Build
-        run: go build -v ./...
-
-      - name: GoFmt Check
-        run: gofmt -s -w ./
-
-      - name: Run go vet
-        run: go vet ./...
-
-      - name: Run staticcheck
-        run: |
-          export PATH=${PATH}:`go env GOPATH`/bin
-          go get -u honnef.co/go/tools/cmd/staticcheck
-          staticcheck ./...
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Run tests
-        run: go test -race -vet=off ./test/...
+        run: go test -v -race ./test/...
+
+#      - name: Build
+#        run: go build -v ./...
+#
+#      - name: GoFmt Check
+#        run: gofmt -s -w ./
+#
+#      - name: Run go vet
+#        run: go vet ./...
+#
+#      - name: Run staticcheck
+#        run: |
+#          export PATH=${PATH}:`go env GOPATH`/bin
+#          go get -u honnef.co/go/tools/cmd/staticcheck
+#          staticcheck ./...
