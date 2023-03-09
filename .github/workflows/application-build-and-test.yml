@@ -6,12 +6,12 @@ on:
   pull_request:
     branches: [master]
 
-env:
-  GOPATH: ${{ runner.workspace }}
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
+    env:
+      GOPATH: ${{ runner.workspace }}
 
     steps:
       - uses: actions/checkout@v3
