@@ -22,7 +22,7 @@ jobs:
           go-version: 1.20
 
       - name: Copy into GOPATH
-        run: cp -r ./go-tree-demo $GOPATH/src/go-tree-demo
+        run: cp -r ../go-tree-demo $GOPATH/src/go-tree-demo
 
       - name: LS Check
         run: ls -a $GOPATH/src/go-tree-demo
