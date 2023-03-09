@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"go-tree-demo/pkg/dir"
+	"github.com/drag0no/go-tree-demo/pkg/dir"
 	"log"
 	"os"
 	"strings"

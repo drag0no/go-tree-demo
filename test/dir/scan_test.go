@@ -1,8 +1,8 @@
 package dir
 
 import (
+	"github.com/drag0no/go-tree-demo/pkg/dir"
 	"github.com/stretchr/testify/assert"
-	"go-tree-demo/pkg/dir"
 	"io/fs"
 	"os"
 	"testing"

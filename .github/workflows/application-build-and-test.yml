@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [master]
 
+env:
+  GOPATH: ${{ runner.workspace }}
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -18,10 +21,14 @@ jobs:
         with:
           go-version: 1.20
 
+      - name: Copy into GOPATH
+        run: cp -r ./go-tree-demo $GOPATH/src/go-tree-demo
+
+      - name: LS Check
+        run: ls -a $GOPATH/src/go-tree-demo
+
       - name: Build
         run: go build -v ./...
-        env:
-          GOPATH: ${{ runner.workspace }}
 
       - name: GoFmt Check
         run: gofmt -s -w ./

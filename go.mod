@@ -1,4 +1,4 @@
-module go-tree-demo
+module github.com/drag0no/go-tree-demo
 
 go 1.20
 
