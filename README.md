@@ -1,8 +1,21 @@
 # Go Tree Demo
 
+## Content
+
+* [Requirements](#requirements)
+* [Building executable](#building-executable)
+* [Usage](#usage)
+* [Dev Notes](#dev-notes)
+  + [Styling and Linting](#styling-and-linting)
+* [Known issues](#known-issues)
+  + [1. GoLand IDE complains about outdated Delve version for debugging.](#1-goland-ide-complains-about-outdated-delve-version-for-debugging)
+* [Possible Future Improvements](#possible-future-improvements)
+
 ## Requirements
 
-* Go v1.20
+* Go version: 
+  * v1.19
+  * v1.20 (preferable)
 
 ## Building executable
 
@@ -20,13 +33,13 @@
 
 ## Dev Notes
 
-### Styling & Linting 
+### Styling and Linting 
 
 * **GoFmt Style**
-  * We use `gofmt` check in GH Actions to verify that all contributors are following the same format style.
+  * Project uses `gofmt` check in GH Actions to verify that all contributors are following the same format style.
   * For `GoLand` you can set `gofmt` File Watcher to apply specified formatting automatically.
-* **Go Vet & Static Check**
-  * We use mentioned above tools in GH Actions to verify that all contributors are following best GoLang practices.
+* **Go Vet & StaticCheck**
+  * Project uses mentioned above tools in GH Actions to verify that all contributors follow best GoLang practices.
 
 ## Known issues
 
@@ -42,7 +55,7 @@ Solution:
 * Set the `dlv.path=<path_to_dlv_executable>` under `Help > Edit Custom Properties`
 * Restart GoLand
 
-## TODO
+## Possible Future Improvements
 
 * Improve the following:
   * Better (more readable) ASCII representation of the directory tree.
