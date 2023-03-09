@@ -22,6 +22,8 @@ jobs:
         run: |
           go install golang.org/x/lint/golint@latest 
           go install honnef.co/go/tools/cmd/staticcheck@latest
+        env:
+          GOPATH: $HOME
 
       - name: Verify dependencies
         run: go mod verify
@@ -35,11 +37,16 @@ jobs:
       - name: Run go vet
         run: go vet ./...
 
+
       - name: Run golint
         run: golint ./...
+        env:
+          GOPATH: $HOME
 
       - name: Run staticcheck
         run: staticcheck ./...
+        env:
+          GOPATH: $HOME
 
       - name: Run tests
         run: go test -race -vet=off ./...
