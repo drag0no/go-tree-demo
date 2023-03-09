@@ -22,23 +22,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-#      - name: Get dependencies
-#        run: go get -v -t -d ./...
+      - name: Build
+        run: go build -v ./...
 
       - name: Run tests
         run: go test -v -race ./test/...
 
-#      - name: Build
-#        run: go build -v ./...
-#
-#      - name: GoFmt Check
-#        run: gofmt -s -w ./
-#
-#      - name: Run go vet
-#        run: go vet ./...
-#
-#      - name: Run staticcheck
-#        run: |
-#          export PATH=${PATH}:`go env GOPATH`/bin
-#          go get -u honnef.co/go/tools/cmd/staticcheck
-#          staticcheck ./...
+      - name: GoFmt Check
+        run: gofmt -s -w ./
+
+      - name: Run go vet
+        run: go vet ./...
+
+      - name: Run staticcheck
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck
+          staticcheck ./...
